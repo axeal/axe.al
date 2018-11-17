@@ -1,4 +1,25 @@
-baseURL = "https://axe.al/"
-languageCode = "en-gb"
-title = "My Blog"
-theme = "cocoa"
+baseURL                = "https://axe.al/"
+languageCode           = "en-gb"
+author                 = "Alex Seymour"
+title                  = "Alex Seymour"
+theme                  = "cocoa-eh"
+pygmentsuseclasses     = true
+
+[permalinks]
+blog                  = "blog/:slug/"
+
+[params]
+include_rss            = true
+latestpostcount        = 5
+i18n_flags             = false
+lang                   = "en"
+author                 = "Alex Seymour"
+copyright              = "Copyright © 2018 Alex Seymour"
+github                 = "axeal"
+linkedin               = "awjseymour"
+twitter                = "xeal88"
+noshowreadtime         = false
+dateform               = "Jan 2, 2006"
+dateformfull           = "Mon Jan 2 2006 15:04:05 MST"
+logofile               = "img/alex_seymour.png"
+posts_navigation       = true
