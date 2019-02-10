@@ -1,0 +1,23 @@
+stages:
+- name: Build
+  steps:
+  - runScriptConfig:
+      image: ubuntu
+      shellScript: |-
+        wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
+        dpkg -i hugo*.deb
+        pip install Pygments
+        hugo
+- name: Publish
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: ${CICD_GIT_REPO_NAME}:${CICD_EXECUTION_SEQUENCE}
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+    path: ./deployment.yaml
+branch:
+  include: [ pipeline]
+  exclude: [ master ]
