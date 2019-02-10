@@ -2,7 +2,7 @@ stages:
 - name: Build
   steps:
   - runScriptConfig:
-      image: ubuntu:latest
+      image: python:2.7-stretch
       shellScript: |-
         wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
         dpkg -i hugo*.deb
