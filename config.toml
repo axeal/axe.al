@@ -1,4 +1,4 @@
-baseURL                = "https://foo.alexseymour.co.uk/"
+baseURL                = "http://foo.alexseymour.co.uk/"
 languageCode           = "en-gb"
 author                 = "Alex Seymour"
 title                  = "Alex Seymour"
