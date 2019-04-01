@@ -14,7 +14,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: ${CICD_GIT_REPO_NAME}:${CICD_EXECUTION_SEQUENCE}
+      tag: axeal/test:latest
       pushRemote: true
       registry: index.docker.io
 - name: Deploy
