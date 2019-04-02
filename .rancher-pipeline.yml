@@ -17,6 +17,8 @@ stages:
       tag: axeal/test:latest
       pushRemote: true
       registry: index.docker.io
+    env:
+      PLUGIN_DEBUG: "true"
 - name: Deploy
   steps:
   - applyYamlConfig:
