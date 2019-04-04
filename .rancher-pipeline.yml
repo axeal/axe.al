@@ -14,9 +14,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: axeal/test:latest
+      tag: test:latest
       pushRemote: true
-      registry: index.docker.io
+      registry: registry.alexseymour.co.uk:8443
     env:
       PLUGIN_DEBUG: "true"
 - name: Deploy
