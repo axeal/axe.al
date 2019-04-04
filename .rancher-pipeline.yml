@@ -19,6 +19,7 @@ stages:
       registry: registry.alexseymour.co.uk:8443
     env:
       PLUGIN_DEBUG: "true"
+      PLUGIN_INSECURE: "true
 - name: Deploy
   steps:
   - applyYamlConfig:
