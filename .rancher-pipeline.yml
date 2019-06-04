@@ -5,7 +5,7 @@ stages:
       path: ./chart
       catalogTemplate: test
       version: 0.0.1
-      gitUrl: https://github-test/axeal/axe.al.git
+      gitUrl: https://github/axeal/axe.al.git
       gitBranch: master
       gitAuthor: alex
       gitEmail: alex@example.com
