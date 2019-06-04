@@ -1,29 +1,21 @@
 stages:
-- name: Build
+- name: publish catalog tag
   steps:
-  - runScriptConfig:
-      image: python:2.7-stretch
-      shellScript: |-
-        git submodule update --init --recursive
-        wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.deb
-        dpkg -i hugo*.deb
-        pip install Pygments
-        hugo
-- name: Publish
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: test:latest
-      pushRemote: true
-      registry: registry.alexseymour.co.uk:8443
-    env:
-      PLUGIN_DEBUG: "true"
-      PLUGIN_INSECURE: "true"
-- name: Deploy
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
+  - publishCatalogConfig:
+      path: ./chart
+      catalogTemplate: test
+      version: 0.0.1
+      gitUrl: https://github.com/axeal/axe.al.git
+      gitBranch: master
+      gitAuthor: alex
+      gitEmail: alex@example.com
+    envFrom:
+    - sourceName: github-credentials
+      sourceKey: USERNAME
+      targetKey: USERNAME
+    - sourceName: github-credentials
+      sourceKey: PASSWORD
+      targetKey: PASSWORD
 branch:
   include:
   - pipeline
