@@ -4,7 +4,7 @@ stages:
   - publishCatalogConfig:
       path: ./chart
       catalogTemplate: test
-      version: 0.0.1
+      version: 0.0.2
       gitUrl: git@github.com:axeal/test-catalog.git
       gitBranch: master
       gitAuthor: alex
@@ -12,6 +12,13 @@ stages:
     envFrom:
     - sourceName: publish-key
       sourceKey: DEPLOY_KEY
+- name: Deploy App
+  steps:
+  - applyAppConfig:
+      catalogTemplate: cattle-global-data:test-test
+      version: 0.0.2
+      name: nginx
+      targetNamespace: default
 branch:
   include:
   - pipeline
