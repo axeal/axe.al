@@ -1,21 +1,17 @@
 stages:
-- name: publish catalog tag
+- name: publish catalog
   steps:
   - publishCatalogConfig:
       path: ./chart
       catalogTemplate: test
       version: 0.0.1
-      gitUrl: https://github-test/axeal/axe.al.git
+      gitUrl: git@github.com:axeal/test-catalog.git
       gitBranch: master
       gitAuthor: alex
       gitEmail: alex@example.com
     envFrom:
-    - sourceName: github-credentials
-      sourceKey: USERNAME
-      targetKey: USERNAME
-    - sourceName: github-credentials
-      sourceKey: PASSWORD
-      targetKey: PASSWORD
+    - sourceName: publish-key
+      sourceKey: DEPLOY_KEY
 branch:
   include:
   - pipeline
