@@ -4,7 +4,7 @@ stages:
   - publishCatalogConfig:
       path: ./chart
       catalogTemplate: test
-      version: 0.0.2
+      version: 0.0.3
       gitUrl: git@github.com:axeal/test-catalog.git
       gitBranch: master
       gitAuthor: alex
