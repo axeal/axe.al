@@ -4,7 +4,7 @@ stages:
   - publishCatalogConfig:
       path: ./chart
       catalogTemplate: test
-      version: 0.0.3
+      version: 0.0.4
       gitUrl: git@github.com:axeal/test-catalog.git
       gitBranch: master
       gitAuthor: alex
@@ -16,7 +16,7 @@ stages:
   steps:
   - applyAppConfig:
       catalogTemplate: p-sz8sj:test-test
-      version: 0.0.3
+      version: 0.0.4
       name: nginx
       targetNamespace: default
 branch:
