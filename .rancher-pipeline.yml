@@ -2,8 +2,8 @@ stages:
 - name: Deploy App
   steps:
   - applyAppConfig:
-      catalogTemplate: p-dkq27:test-test
-      version: 0.0.4
+      catalogTemplate: cattle-global-data:test-test
+      version: 0.0.3
       name: nginx
       targetNamespace: default
 branch:
