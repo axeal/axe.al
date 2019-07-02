@@ -1,10 +1,17 @@
 stages:
-- name: Deploy App
+- name: Cluster Level
   steps:
   - applyAppConfig:
       catalogTemplate: cattle-global-data:test-test
-      version: 0.0.4
-      name: nginx
+      version: 0.0.3
+      name: cluster
+      targetNamespace: default
+- name: Project Level
+  steps:
+  - applyAppConfig:
+      catalogTemplate: p-dkq27:test-test
+      version: 0.0.3
+      name: project
       targetNamespace: default
 branch:
   include:
