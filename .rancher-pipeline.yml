@@ -1,22 +1,9 @@
 stages:
-- name: publish catalog
-  steps:
-  - publishCatalogConfig:
-      path: ./chart
-      catalogTemplate: test
-      version: 0.0.4
-      gitUrl: git@github.com:axeal/test-catalog.git
-      gitBranch: master
-      gitAuthor: alex
-      gitEmail: alex@example.com
-    envFrom:
-    - sourceName: publish-key
-      sourceKey: DEPLOY_KEY
 - name: Deploy App
   steps:
   - applyAppConfig:
-      catalogTemplate: p-sz8sj:test-test
-      version: 0.0.4
+      catalogTemplate: p-dkq27:test-test
+      version: 0.0.3
       name: nginx
       targetNamespace: default
 branch:
