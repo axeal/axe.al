@@ -5,14 +5,14 @@ stages:
       catalogTemplate: cattle-global-data:test-test
       version: 0.0.3
       name: cluster
-      targetNamespace: default
+      targetNamespace: cluster
 - name: Project Level
   steps:
   - applyAppConfig:
       catalogTemplate: p-dkq27:test-test
       version: 0.0.3
       name: project
-      targetNamespace: default
+      targetNamespace: project
 branch:
   include:
   - pipeline
