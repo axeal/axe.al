@@ -3,14 +3,14 @@ stages:
   steps:
   - publishCatalogConfig:
       path: ./chart
-      catalogTemplate: ${TEMPLATE_NAME}
+      catalogTemplate: ${CICD_GIT_REPO_NAME}
       version: 0.0.4
-      gitUrl: git@github.com:axeal/test-catalog.git
+      gitUrl: ${TEMPLATE_NAME}
       gitBranch: master
       gitAuthor: alex
       gitEmail: alex@example.com
     env:
-      TEMPLATE_NAME: foo
+      TEMPLATE_NAME: git@github.com:axeal/test-catalog.git
     envFrom:
     - sourceName: publish-key
       sourceKey: DEPLOY_KEY
