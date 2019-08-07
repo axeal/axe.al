@@ -1,18 +1,17 @@
 stages:
-- name: Cluster Level
+- name: publish catalog
   steps:
-  - applyAppConfig:
-      catalogTemplate: cattle-global-data:test-test
-      version: 0.0.3
-      name: cluster
-      targetNamespace: cluster
-- name: Project Level
-  steps:
-  - applyAppConfig:
-      catalogTemplate: p-dkq27:test-test
-      version: 0.0.3
-      name: project
-      targetNamespace: project
+  - publishCatalogConfig:
+      path: ./chart
+      catalogTemplate: ${CICD_GIT_REPO_NAME}
+      version: 0.0.4
+      gitUrl: git@github.com:axeal/test-catalog.git
+      gitBranch: master
+      gitAuthor: alex
+      gitEmail: alex@example.com
+    envFrom:
+    - sourceName: publish-key
+      sourceKey: DEPLOY_KEY
 branch:
   include:
   - pipeline
