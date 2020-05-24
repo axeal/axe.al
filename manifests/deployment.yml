@@ -13,11 +13,11 @@ spec:
     metadata:
       labels:
         app: blog
-    securityContext:
-      runAsUser: 101
-      runAsGroup: 101
-      fsGroup: 101
     spec:
+      securityContext:
+        runAsUser: 101
+        runAsGroup: 101
+        fsGroup: 101
       containers:
       - name: axeal
         image: axeal/axe.al
