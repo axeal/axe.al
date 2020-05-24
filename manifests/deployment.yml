@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: axeal
+  labels:
+    app: axeal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: axeal
+  template:
+    metadata:
+      labels:
+        app: axeal
+    spec:
+      containers:
+      - name: axeal
+        image: axeal/axe.al
+        ports:
+        - containerPort: 80
