@@ -9,8 +9,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      SHA8: ${GITHUB_SHA::8}
 
     steps:
     - name: Check out code
@@ -29,7 +27,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
         repository: axeal/axe.al
-        tags: $SHA8
+        tags: ${{ github.sha }}
     - name: Set Kubernetes context
       uses: azure/k8s-set-context@v1
       with:
@@ -43,4 +41,4 @@ jobs:
           manifests/deployment.yml
           manifests/service.yml
           manifests/ingress.yml
-        images: axeal/axe.al:$SHA8
+        images: axeal/axe.al:${{ github.sha }}
