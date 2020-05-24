@@ -27,7 +27,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
         repository: axeal/axe.al
-        tags: ${{ github.sha }}
+        tags: ${{ github.sha }},latest
     - name: Set Kubernetes context
       uses: azure/k8s-set-context@v1
       with:
