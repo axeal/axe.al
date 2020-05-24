@@ -1,3 +1,5 @@
-FROM nginx:1.14-alpine
+FROM nginx:1.17-alpine
 
-Add public /usr/share/nginx/html
+RUN sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+ADD public /usr/share/nginx/html
