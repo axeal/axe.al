@@ -9,6 +9,10 @@ spec:
   selector:
     matchLabels:
       app: blog
+  securityContext:
+    runAsUser: 101
+    runAsGroup: 101
+    fsGroup: 101
   template:
     metadata:
       labels:
