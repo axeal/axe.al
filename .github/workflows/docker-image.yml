@@ -28,16 +28,3 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
         repository: axeal/axe.al
         tags: ${{ github.sha }},latest
-    - name: Set Kubernetes context
-      uses: azure/k8s-set-context@v1
-      with:
-        method: service-account
-        k8s-url: ${{ secrets.K8S_URL }}
-        k8s-secret: ${{ secrets.K8S_SECRET }}
-    - name: Deploy to Kubernetes
-      uses: Azure/k8s-deploy@v1
-      with:
-        namespace: blog
-        manifests: |
-          manifests/deployment.yml
-        images: axeal/axe.al:${{ github.sha }}
