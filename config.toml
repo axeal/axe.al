@@ -1,4 +1,4 @@
-baseURL                = "https://axe.al/"
+baseURL                = "/"
 languageCode           = "en-gb"
 author                 = "Alex Seymour"
 title                  = "Alex Seymour"
