@@ -5,6 +5,7 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
+			"HUGO": "hugo_extended",
 			"HUGO_VERSION": "0.148.2"
 		}
 	},
