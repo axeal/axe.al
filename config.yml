@@ -1,0 +1,43 @@
+baseURL: "/"
+title: "Alex Seymour"
+pagerSize: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minifyOutput: true
+
+params:
+  env: production
+  author: "Alex Seymour"
+  title: "Alex Seymour"
+  dateformat: "Jan 2, 2006"
+
+  profileMode:
+    enabled: true
+    title: "Alex Seymour"
+    subtitle: "Principal Escalation Engineer @ [SUSE Rancher](https://github.com/rancher)"
+    imageUrl: "/img/alex_seymour.png"
+    buttons:
+      - name: Blog
+        url: blog
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/axeal"
+    - name: linkedin
+      url: "https://linkedin.com/in/awjseymour"
+
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  assets:
+    favicon: "/img/favicon.ico"
+    favicon16x16: "/img/favicon-16x16.png"
+    favicon32x32: "/img/favicon-32x32.png"
+    apple_touch_icon: "/img/apple-touch-icon.png"
