@@ -4,11 +4,8 @@
 	"name": "Hugo",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"target": "devel",
 		"args": {
-			"APLINE_VERSION": "3.14",
-			"HUGO_VERSION": "0.70.0",
-			"HUGO_SHA": "d0e2e1f8d2f69c1b378e34daaf9f91997cf777d3151da4d8aa6bd7b5703f9446"
+			"HUGO_VERSION": "0.148.2"
 		}
 	},
 
