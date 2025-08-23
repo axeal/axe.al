@@ -1,4 +1,3 @@
 /public/
 .DS_Store
-/themes/*
 .hugo_build.lock
