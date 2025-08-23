@@ -1,12 +1,12 @@
-FROM nginx:1.17-alpine as build
+FROM nginx:1.29-alpine as build
 
 RUN apk add --update wget
 
-ARG HUGO_VERSION="0.70.0"
+ARG HUGO_VERSION="0.148.2"
 
 RUN if [[ "$TARGETARCH" = "amd64" ]]; then \
-  wget --quiet -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz"; else \
-  wget --quiet -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-ARM64.tar.gz"; fi && \
+  wget --quiet -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"; else \
+  wget --quiet -O hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-arm64.tar.gz"; fi && \
   tar xzf hugo.tar.gz && \
   rm -r hugo.tar.gz && \
   mv hugo /usr/bin
@@ -15,7 +15,7 @@ COPY ./ /site
 WORKDIR /site
 RUN hugo --minify
 
-FROM nginx:1.17-alpine
+FROM nginx:1.29-alpine
 
 RUN sed -i 's/listen  .*/listen 8080;/g' /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/nginx.conf
